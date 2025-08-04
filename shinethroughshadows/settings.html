@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Shine Through Shadows</title>
+  <link rel="stylesheet" href="about.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-container">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+          <span>Shine Through Shadows</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="landing.html" class="nav-link">Home</a></li>
+          <li><a href="articles.html" class="nav-link">Articles</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="articles.html" class="nav-link">Resources</a></li>
+          <li><a href="community.html" class="nav-link">Community</a></li>
+          <li><a href="settings.html" class="nav-link active">Settings</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="main-content">
+    <div class="container">
+      <!-- Settings Header -->
+      <section class="settings-header fade-in">
+        <h1 class="main-title">Settings</h1>
+        <div class="user-profile">
+          <div class="user-avatar">
+            <div class="avatar-placeholder">JD</div>
+          </div>
+          <div class="user-info">
+            <h2 class="user-name">Jane Doe</h2>
+            <p class="user-email">jane.doe@example.com</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Content -->
+      <div class="settings-container">
+        <!-- Settings Sidebar -->
+        <div class="settings-sidebar fade-in delay-1">
+          <ul class="settings-menu">
+            <li class="menu-item active" data-section="account">Account</li>
+            <li class="menu-item" data-section="notifications">Notifications</li>
+            <li class="menu-item" data-section="privacy">Privacy</li>
+            <li class="menu-item" data-section="appearance">Appearance</li>
+          </ul>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="settings-content fade-in delay-2">
+          <!-- Account Settings Section -->
+          <div id="account" class="settings-section active">
+            <h2 class="section-title">Account Settings</h2>
+            <form class="settings-form">
+              <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" value="Jane Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="jane.doe@example.com">
+              </div>
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="3">Mental health advocate and community supporter.</textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="save-btn">Save Changes</button>
+              </div>
+            </form>
+            <div class="settings-divider"></div>
+            <div class="password-section">
+              <h3>Password</h3>
+              <form class="password-form">
+                <div class="form-group">
+                  <label for="current-password">Current Password</label>
+                  <input type="password" id="current-password" name="current-password">
+                </div>
+                <div class="form-group">
+                  <label for="new-password">New Password</label>
+                  <input type="password" id="new-password" name="new-password">
+                </div>
+                <div class="form-group">
+                  <label for="confirm-password">Confirm New Password</label>
+                  <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="save-btn">Update Password</button>
+                </div>
+              </form>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="logout-section">
+              <h3>Session</h3>
+              <p>You are currently logged in. You can log out of your account here.</p>
+              <button id="logout-btn" class="logout-btn">Log Out</button>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="danger-zone">
+              <h3>Danger Zone</h3>
+              <p>Once you delete your account, there is no going back. Please be certain.</p>
+              <button class="delete-account-btn">Delete Account</button>
+            </div>
+          </div>
+
+          <!-- Notifications Settings Section -->
+          <div id="notifications" class="settings-section">
+            <h2 class="section-title">Notification Settings</h2>
+            <div class="notification-options">
+              <div class="notification-option">
+                <div>
+                  <h3>Email Notifications</h3>
+                  <p>Receive email updates about new articles and resources</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="notification-option">
+                <div>
+                  <h3>Newsletter</h3>
+                  <p>Receive our monthly newsletter with mental health tips</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="notification-option">
+                <div>
+                  <h3>Community Updates</h3>
+                  <p>Get notified about community events and discussions</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="save-btn">Save Preferences</button>
+            </div>
+          </div>
+
+          <!-- Privacy Settings Section -->
+          <div id="privacy" class="settings-section">
+            <h2 class="section-title">Privacy Settings</h2>
+            <div class="privacy-options">
+              <div class="privacy-option">
+                <div>
+                  <h3>Profile Visibility</h3>
+                  <p>Control who can see your profile information</p>
+                </div>
+                <select class="privacy-select">
+                  <option value="public">Public</option>
+                  <option value="members" selected>Members Only</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+              <div class="privacy-option">
+                <div>
+                  <h3>Activity Status</h3>
+                  <p>Show when you're active on the platform</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="privacy-option">
+                <div>
+                  <h3>Data Usage</h3>
+                  <p>Allow us to use your data to improve your experience</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="save-btn">Save Privacy Settings</button>
+            </div>
+          </div>
+
+          <!-- Appearance Settings Section -->
+          <div id="appearance" class="settings-section">
+            <h2 class="section-title">Appearance Settings</h2>
+            <div class="appearance-options">
+              <div class="theme-selection">
+                <h3>Theme</h3>
+                <div class="theme-options">
+                  <div class="theme-option active">
+                    <div class="theme-preview light-theme"></div>
+                    <span>Light</span>
+                  </div>
+                  <div class="theme-option">
+                    <div class="theme-preview dark-theme"></div>
+                    <span>Dark</span>
+                  </div>
+                  <div class="theme-option">
+                    <div class="theme-preview system-theme"></div>
+                    <span>System</span>
+                  </div>
+                </div>
+              </div>
+              <div class="font-selection">
+                <h3>Font Size</h3>
+                <div class="font-options">
+                  <button class="font-option">Small</button>
+                  <button class="font-option active">Medium</button>
+                  <button class="font-option">Large</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="save-btn">Save Appearance</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+          <span>Shine Through Shadows</span>
+        </div>
+        <p class="footer-tagline">Supporting mental health awareness and recovery</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <span id="current-year"></span> Shine Through Shadows. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Log Out</h2>
+      <p>Are you sure you want to log out of your account?</p>
+      <div class="modal-buttons">
+        <button id="cancel-logout" class="cancel-btn">Cancel</button>
+        <button id="confirm-logout" class="confirm-btn">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="about.js"></script>
+  <script src="settings.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

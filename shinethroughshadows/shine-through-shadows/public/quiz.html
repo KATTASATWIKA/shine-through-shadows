@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Assessment | Shine Through Shadows</title>
+    <meta name="description" content="Mental health assessment quiz" />
+    <meta name="author" content="Shine Through Shadows" />
+    <link rel="stylesheet" href="landingpage.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="waves-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+      </div>
+      
+      <header>
+        <div class="logo">
+          <span class="logo-text">Shine <span class="accent">Through</span> Shadows</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="landingpage.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="about.html" class="nav-link">Services</a></li>
+            <li><a href="about.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="quiz-container" id="quiz-container">
+          <div class="quiz-header">
+            <h2>Mental Health Assessment</h2>
+            <p>Answer the following questions to help us understand your mental health needs.</p>
+            <p>For each question, select the option that best describes how you've been feeling over the last 2 weeks.</p>
+          </div>
+          
+          <form id="quiz-form">
+            <div class="question-container">
+              <div class="question">
+                <h3>1. How often do you feel that life is meaningless or that you lack purpose?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q1-0" name="q1" value="0" required>
+                    <label for="q1-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q1-1" name="q1" value="1">
+                    <label for="q1-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q1-2" name="q1" value="2">
+                    <label for="q1-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q1-3" name="q1" value="3">
+                    <label for="q1-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>2. Do you feel disconnected from your emotions, as if you’re just going through the motions?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q2-0" name="q2" value="0" required>
+                    <label for="q2-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q2-1" name="q2" value="1">
+                    <label for="q2-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q2-2" name="q2" value="2">
+                    <label for="q2-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q2-3" name="q2" value="3">
+                    <label for="q2-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>3. Have you felt an overwhelming sense of sadness, guilt, or worthlessness that you can’t explain?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q3-0" name="q3" value="0" required>
+                    <label for="q3-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q3-1" name="q3" value="1">
+                    <label for="q3-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q3-2" name="q3" value="2">
+                    <label for="q3-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q3-3" name="q3" value="3">
+                    <label for="q3-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>4. Do you experience mood swings, where you feel fine one moment and deeply upset the next?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q4-0" name="q4" value="0" required>
+                    <label for="q4-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q4-1" name="q4" value="1">
+                    <label for="q4-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q4-2" name="q4" value="2">
+                    <label for="q4-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q4-3" name="q4" value="3">
+                    <label for="q4-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>5. Do you feel like no one truly understands what you’re going through?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q5-0" name="q5" value="0" required>
+                    <label for="q5-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q5-1" name="q5" value="1">
+                    <label for="q5-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q5-2" name="q5" value="2">
+                    <label for="q5-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q5-3" name="q5" value="3">
+                    <label for="q5-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>6. Have you noticed any significant changes in your routine, such as neglecting personal hygiene or responsibilities?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q6-0" name="q6" value="0" required>
+                    <label for="q6-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q6-1" name="q6" value="1">
+                    <label for="q6-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q6-2" name="q6" value="2">
+                    <label for="q6-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q6-3" name="q6" value="3">
+                    <label for="q6-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>7. How often do you cancel plans or avoid social interactions because you feel too exhausted or uninterested?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q7-0" name="q7" value="0" required>
+                    <label for="q7-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q7-1" name="q7" value="1">
+                    <label for="q7-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q7-2" name="q7" value="2">
+                    <label for="q7-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q7-3" name="q7" value="3">
+                    <label for="q7-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>8. Do you find it difficult to complete even simple tasks, like making a meal or responding to messages?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q8-0" name="q8" value="0" required>
+                    <label for="q8-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q8-1" name="q8" value="1">
+                    <label for="q8-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q8-2" name="q8" value="2">
+                    <label for="q8-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q8-3" name="q8" value="3">
+                    <label for="q8-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h3>9. How often do you procrastinate or avoid making decisions due to a lack of motivation?</h3>
+                <div class="options">
+                  <div class="option">
+                    <input type="radio" id="q9-0" name="q9" value="0" required>
+                    <label for="q9-0">Not at all</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q9-1" name="q9" value="1">
+                    <label for="q9-1">Several days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q9-2" name="q9" value="2">
+                    <label for="q9-2">More than half the days</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="q9-3" name="q9" value="3">
+                    <label for="q9-3">Nearly every day</label>
+                  </div>
+                </div>
+              </div>
+
+          <div class="question">
+  <h3>10. Have you lost interest in hobbies or activities that once brought you joy?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q10-0" name="q10" value="0" required>
+      <label for="q10-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q10-1" name="q10" value="1">
+      <label for="q10-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q10-2" name="q10" value="2">
+      <label for="q10-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q10-3" name="q10" value="3">
+      <label for="q10-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>11. Do you often feel physically drained, even after getting enough sleep?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q11-0" name="q11" value="0" required>
+      <label for="q11-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q11-1" name="q11" value="1">
+      <label for="q11-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q11-2" name="q11" value="2">
+      <label for="q11-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q11-3" name="q11" value="3">
+      <label for="q11-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>12. Have you been experiencing frequent headaches, stomach issues, or other unexplained body pains?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q12-0" name="q12" value="0" required>
+      <label for="q12-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q12-1" name="q12" value="1">
+      <label for="q12-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q12-2" name="q12" value="2">
+      <label for="q12-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q12-3" name="q12" value="3">
+      <label for="q12-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>13. Do you struggle with extreme fatigue or find it hard to get out of bed in the morning?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q13-0" name="q13" value="0" required>
+      <label for="q13-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q13-1" name="q13" value="1">
+      <label for="q13-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q13-2" name="q13" value="2">
+      <label for="q13-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q13-3" name="q13" value="3">
+      <label for="q13-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>14. Have you noticed drastic changes in your appetite (overeating or loss of appetite)?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q14-0" name="q14" value="0" required>
+      <label for="q14-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q14-1" name="q14" value="1">
+      <label for="q14-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q14-2" name="q14" value="2">
+      <label for="q14-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q14-3" name="q14" value="3">
+      <label for="q14-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>15. Have you been using substances (alcohol, drugs, excessive caffeine) as a coping mechanism?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q15-0" name="q15" value="0" required>
+      <label for="q15-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q15-1" name="q15" value="1">
+      <label for="q15-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q15-2" name="q15" value="2">
+      <label for="q15-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q15-3" name="q15" value="3">
+      <label for="q15-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>16. Do you often find yourself lost in negative thoughts that you can’t escape from?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q16-0" name="q16" value="0" required>
+      <label for="q16-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q16-1" name="q16" value="1">
+      <label for="q16-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q16-2" name="q16" value="2">
+      <label for="q16-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q16-3" name="q16" value="3">
+      <label for="q16-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>17. How often do you feel overwhelmed by regret or mistakes from your past?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q17-0" name="q17" value="0" required>
+      <label for="q17-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q17-1" name="q17" value="1">
+      <label for="q17-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q17-2" name="q17" value="2">
+      <label for="q17-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q17-3" name="q17" value="3">
+      <label for="q17-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>18. Do you struggle with concentration or feel like your mind is constantly foggy?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q18-0" name="q18" value="0" required>
+      <label for="q18-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q18-1" name="q18" value="1">
+      <label for="q18-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q18-2" name="q18" value="2">
+      <label for="q18-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q18-3" name="q18" value="3">
+      <label for="q18-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>19. Have you noticed an increase in self-critical or self-destructive thoughts?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q19-0" name="q19" value="0" required>
+      <label for="q19-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q19-1" name="q19" value="1">
+      <label for="q19-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q19-2" name="q19" value="2">
+      <label for="q19-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q19-3" name="q19" value="3">
+      <label for="q19-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>20. Do you feel that your relationships with family or friends are deteriorating?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q20-0" name="q20" value="0" required>
+      <label for="q20-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q20-1" name="q20" value="1">
+      <label for="q20-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q20-2" name="q20" value="2">
+      <label for="q20-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q20-3" name="q20" value="3">
+      <label for="q20-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>21. How frequently do you experience feelings of worthlessness or guilt?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q21-0" name="q21" value="0" required>
+      <label for="q21-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q21-1" name="q21" value="1">
+      <label for="q21-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q21-2" name="q21" value="2">
+      <label for="q21-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q21-3" name="q21" value="3">
+      <label for="q21-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>22. Do you find yourself withdrawing socially or avoiding social interactions?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q22-0" name="q22" value="0" required>
+      <label for="q22-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q22-1" name="q22" value="1">
+      <label for="q22-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q22-2" name="q22" value="2">
+      <label for="q22-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q22-3" name="q22" value="3">
+      <label for="q22-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>23. Have you experienced thoughts about self-harm or suicide?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q23-0" name="q23" value="0" required>
+      <label for="q23-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q23-1" name="q23" value="1">
+      <label for="q23-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q23-2" name="q23" value="2">
+      <label for="q23-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q23-3" name="q23" value="3">
+      <label for="q23-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>24. Do you feel persistent sadness that doesn't seem to lift?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q24-0" name="q24" value="0" required>
+      <label for="q24-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q24-1" name="q24" value="1">
+      <label for="q24-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q24-2" name="q24" value="2">
+      <label for="q24-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q24-3" name="q24" value="3">
+      <label for="q24-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <h3>25. Do you feel like you have no hope for the future?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q25-0" name="q25" value="0" required>
+      <label for="q25-0">Not at all</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q25-1" name="q25" value="1">
+      <label for="q25-1">Several days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q25-2" name="q25" value="2">
+      <label for="q25-2">More than half the days</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q25-3" name="q25" value="3">
+      <label for="q25-3">Nearly every day</label>
+    </div>
+  </div>
+</div>
+<div class="question">
+  <h3>26. What is your age?</h3>
+  <div class="options">
+    <div class="option">
+      <input type="radio" id="q26-0" name="q26" value="0" required>
+      <label for="q26-0">0-9</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q26-1" name="q26" value="1">
+      <label for="q26-1">50 plus</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q26-2" name="q26" value="2">
+      <label for="q26-2">30-50</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="q26-3" name="q26" value="3">
+      <label for="q26-3">15-30</label>
+    </div>
+  </div>
+</div>
+
+           <button type="submit" class="btn primary-btn submit-quiz">Submit Assessment</button>
+
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <p>&copy; 2025 Shine Through Shadows. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+   <script>
+  document.getElementById('quiz-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const responses = {};
+    for (let [key, value] of formData.entries()) {
+      responses[key] = value;
+    }
+
+    const email = localStorage.getItem('userEmail'); // You should have saved this at login
+
+    try {
+      const res = await fetch('http://localhost:3000/api/submit-quiz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, responses })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('latestReport', JSON.stringify(data.report));
+        window.location.href = 'report.html';
+      } else {
+        alert(data.error || 'Quiz submission failed.');
+      }
+    } catch (err) {
+      console.error('Quiz submission error:', err);
+      alert('An error occurred while submitting the quiz.');
+    }
+  });
+</script>
+
+  </body>
+</html>

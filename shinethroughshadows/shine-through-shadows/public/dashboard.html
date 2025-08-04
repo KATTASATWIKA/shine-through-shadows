@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shine Through Shadows | Mild Depression Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <style>
+        :root {
+            --navy-blue: #05445e;
+            --blue-grotto: #189ab4;
+            --blue-green: #75e6da;
+            --baby-blue: #d4f1f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--baby-blue);
+            color: var(--navy-blue);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .wave-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            background: linear-gradient(120deg, var(--blue-green) 0%, var(--baby-blue) 100%);
+        }
+
+        .wave-bg::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(ellipse at center, transparent 0%, var(--baby-blue) 70%);
+            animation: wave 15s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            background: linear-gradient(135deg, var(--blue-grotto), var(--blue-green));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, var(--blue-grotto), var(--blue-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--baby-blue);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--blue-grotto);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--blue-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy-blue);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(117, 230, 218, 0.7);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .sidebar {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+
+        .profile-summary {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--baby-blue);
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--blue-grotto), var(--blue-green));
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(24, 154, 180, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(24, 154, 180, 0.4);
+        }
+
+        .user-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--navy-blue);
+        }
+
+        .user-status {
+            display: inline-block;
+            background-color: var(--blue-green);
+            color: var(--navy-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .sidebar-menu {
+            list-style-type: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: var(--navy-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: var(--baby-blue);
+            transform: translateX(5px);
+        }
+
+        .sidebar-menu .active {
+            background-color: var(--blue-green);
+            color: var(--navy-blue);
+            font-weight: bold;
+        }
+
+        .sidebar-menu i {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .dashboard-content {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+        }
+
+        .greeting {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .greeting::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--blue-green) 0%, transparent 70%);
+            opacity: 0.5;
+            border-radius: 50%;
+            transform: translate(30%, 30%);
+        }
+
+        .greeting h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--navy-blue);
+        }
+
+        .greeting p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 80%;
+            line-height: 1.6;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blue-grotto), var(--blue-green));
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: var(--baby-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--navy-blue);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--navy-blue);
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .progress-container {
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: var(--baby-blue);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue-grotto), var(--blue-green));
+            border-radius: 5px;
+            width: 35%;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .mood-tracker-chart {
+            height: 150px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .mood-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12%;
+        }
+
+        .mood-bar {
+            width: 100%;
+            background: linear-gradient(180deg, var(--blue-grotto), var(--blue-green));
+            border-radius: 5px 5px 0 0;
+            transition: height 0.5s ease;
+        }
+
+        .mood-label {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .task-list {
+            list-style-type: none;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--baby-blue);
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--blue-grotto);
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .task-checkbox.completed {
+            background-color: var(--blue-grotto);
+            position: relative;
+        }
+
+        .task-checkbox.completed::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .task-text {
+            flex-grow: 1;
+            transition: all 0.2s ease;
+        }
+
+        .task-completed .task-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .task-due {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .recommended-resources {
+            margin-top: 15px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--baby-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateX(5px);
+        }
+
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: var(--baby-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy-blue);
+        }
+
+        .resource-info {
+            flex-grow: 1;
+        }
+
+        .resource-title {
+            color: var(--navy-blue);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .resource-type {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--blue-grotto), var(--blue-green));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(24, 154, 180, 0.4);
+        }
+
+        .breathing-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue-grotto), var(--blue-green));
+            margin: 20px auto;
+            animation: breathing 8s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(24, 154, 180, 0.3);
+        }
+
+        @keyframes breathing {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+            }
+        }
+    /* Basic avatar styling */
+    .user-avatar {
+      background: #f4b400;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-sun"></i></div>
+        <div class="logo-text">Shine Through Shadows</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="articles.html"><i class="fas fa-book"></i> Resources</a></li>
+          <li><a href="community.html"><i class="fas fa-comments"></i> Community</a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-profile">
+        <div class="user-avatar" id="user-avatar">U</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container main-content">
+    <aside class="sidebar">
+      <div class="profile-summary">
+        <div class="profile-pic" id="user-avatar-sidebar">U</div>
+        <h3 class="user-name" id="sidebar-user-name">User Name</h3>
+        <span class="user-status" id="depression-level">Depression Level</span>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="report.html"><i class="fas fa-calendar-alt"></i> Report</a></li>
+        <li><a href="mood.html"><i class="fas fa-chart-line"></i> Mood Tracker</a></li>
+        <li><a href="diary.html"><i class="fas fa-chart-line"></i> Daily Log</a></li>
+        <li><a href="articles.html"><i class="fas fa-book"></i> Resources</a></li>
+        <li><a href="chatbot.html"><i class="fas fa-comment-dots"></i> Chat Support</a></li>
+        <li><a href="https://discord.gg/jQcWu6qH"><i class="fas fa-users"></i> Community</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="landingpage.html"><i class="fas fa-question-circle"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <section class="greeting">
+        <h1>Good morning, <span id="user-first-name">User</span>!</h1>
+        <p>Welcome to your Mild Depression support dashboard. Today is a new opportunity to take small steps toward feeling better. Remember, every small action counts.</p>
+      </section>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Your Progress</h3>
+              <p class="card-subtitle">Keep going! You're doing great.</p>
+            </div>
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 35%;"></div>
+            </div>
+            <div class="progress-text">
+              <span>Week 2</span>
+              <span>35% Complete</span>
+            </div>
+          </div>
+
+          <p>You've completed 7 out of 20 activities in your treatment plan.</p>
+          <a href="#" class="cta-button">View Full Progress</a>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Mood Tracker</h3>
+              <p class="card-subtitle">Last 7 days</p>
+            </div>
+            <div class="card-icon"><i class="fas fa-smile"></i></div>
+          </div>
+
+          <div class="mood-tracker-chart">
+            <div class="mood-day"><div class="mood-bar" style="height: 50px;"></div><span class="mood-label">Mon</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 70px;"></div><span class="mood-label">Tue</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 60px;"></div><span class="mood-label">Wed</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 40px;"></div><span class="mood-label">Thu</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 65px;"></div><span class="mood-label">Fri</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 80px;"></div><span class="mood-label">Sat</span></div>
+            <div class="mood-day"><div class="mood-bar" style="height: 75px;"></div><span class="mood-label">Sun</span></div>
+          </div>
+
+          <p>Keep tracking daily!</p>
+          <a href="mood.html" class="cta-button">Log Today's Mood</a>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Daily Tasks</h3>
+              <p class="card-subtitle">For today, May 16, 2025</p>
+            </div>
+            <div class="card-icon"><i class="fas fa-tasks"></i></div>
+          </div>
+          <input type="text" id="custom-task-name" placeholder="New task..." style="width: 100%; padding: 10px; margin-top: 15px; border-radius: 5px;">
+<input type="time" id="custom-task-time" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px;">
+<button onclick="addCustomTask()" class="cta-button" style="margin-top: 10px;">Add Task</button>
+
+          <ul class="task-list" id="task-list">
+            <li class="task-item task-completed">
+              <div class="task-checkbox completed"></div>
+              <div class="task-text">Morning mindfulness exercise (5 mins)</div>
+              <div class="task-due">8:00 AM</div>
+            </li>
+            <li class="task-item">
+              <div class="task-checkbox"></div>
+              <div class="task-text">Take a 15-minute walk outside</div>
+              <div class="task-due">12:30 PM</div>
+            </li>
+            <li class="task-item">
+              <div class="task-checkbox"></div>
+              <div class="task-text">Write in gratitude journal</div>
+              <div class="task-due">7:00 PM</div>
+            </li>
+            <li class="task-item">
+              <div class="task-checkbox"></div>
+              <div class="task-text">Do one thing you enjoy today</div>
+              <div class="task-due">Anytime</div>
+            </li>
+            <li style="flex-direction: column; gap: 10px; padding-top: 20px;">
+  <input type="text" id="custom-task-name" placeholder="New task name..." style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
+  <input type="time" id="custom-task-time" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
+  <button onclick="addCustomTask()" class="cta-button" style="margin-top: 10px;">Add Task</button>
+</li>
+
+          </ul>
+
+          <a href="tasks.html" class="cta-button">View All Tasks</a>
+        </div>
+        <div class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Mindful Breathing</h3>
+              <p class="card-subtitle">Take a moment to relax</p>
+            </div>
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
+          </div>
+
+          <div class="breathing-circle"></div>
+          <p>Breathe in as the circle expands, and out as it contracts. This simple exercise can help reduce anxiety and improve focus.</p>
+          <a href="game.html" class="cta-button">More Mindfulness Exercises</a>
+        </div>
+
+        <div class="dashboard-card" style="grid-column: span 2;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Recommended Resources</h3>
+              <p class="card-subtitle">Personalized for mild depression</p>
+            </div>
+            <div class="card-icon"><i class="fas fa-book-open"></i></div>
+          </div>
+
+          <div class="recommended-resources">
+            <div class="resource-item">
+              <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+              <div class="resource-info">
+                <a href="articles.html"><div class="resource-title">Understanding Mild Depression: A Beginner's Guide</div></a>
+                <div class="resource-type">Article • 5 min read</div>
+              </div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-icon"><i class="fas fa-video"></i></div>
+              <div class="resource-info">
+                <div class="resource-title">5-Minute Guided Meditation for Beginners</div>
+                <div class="resource-type">Video • 5 min</div>
+              </div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-icon"><i class="fas fa-headphones"></i></div>
+              <div class="resource-info">
+                <div class="resource-title">Sleep Better: Calming Soundscapes</div>
+                <div class="resource-type">Audio • 30 min</div>
+              </div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-icon"><i class="fas fa-users"></i></div>
+              <div class="resource-info">
+                <div class="resource-title">Mild Depression Support Group</div>
+                <div class="resource-type">Community • Next meeting: Tomorrow</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="articles.html" class="cta-button">Browse All Resources</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (user) {
+    const fullName = user.name || 'User';
+    const firstName = fullName.split(" ")[0];
+    const initials = fullName
+      .split(" ")
+      .map(n => n[0])
+      .join("")
+      .toUpperCase();
+
+    document.getElementById("user-first-name").textContent = firstName;
+    document.getElementById("sidebar-user-name").textContent = fullName;
+    document.getElementById("user-avatar").textContent = initials;
+    document.getElementById("user-avatar-sidebar").textContent = initials;
+
+    // Set depression level
+    const score = user.quizScore || 0;
+    let level = "Unknown";
+
+    if (score <= 10) level = "No Depression";
+    else if (score <= 20) level = "Mild Depression";
+    else if (score <= 35) level = "Moderate Depression";
+    else if (score <= 50) level = "Moderately Severe Depression";
+    else level = "Severe Depression";
+
+    document.getElementById("depression-level").textContent = level;
+  } else {
+    window.location.href = "index.html";
+  }
+});
+const DEFAULT_TASKS = [
+  { task: 'Drink a glass of water', time: '08:00' },
+  { task: '5-minute mindful breathing', time: '09:00' },
+  { task: 'Take a short walk (10 mins)', time: '11:00' },
+  { task: 'Eat a nourishing meal', time: '13:00' },
+  { task: "Write 3 things you're grateful for", time: '18:00' },
+  { task: 'Stretch or light yoga (5 mins)', time: '19:30' },
+  { task: 'Sleep by 10:30 PM', time: '22:30' },
+];
+
+async function loadTodayTasks() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const email = user?.email;
+  if (!email) return;
+
+  const today = new Date();
+  const todayStr = today.toISOString().split("T")[0];
+  const taskList = document.getElementById("task-list");
+  taskList.innerHTML = "";
+
+  try {
+    const res = await fetch(`http://localhost:3000/api/tasks/${email}`);
+    const data = await res.json();
+    const todayTasks = [];
+
+    // All tasks from DB for today
+    const allTasks = data.groupedTasks?.[todayStr] || [];
+
+    // Add DB tasks first (completed + custom ones)
+    allTasks.forEach(task => {
+      todayTasks.push({ ...task, source: "db" });
+    });
+
+    // Add default tasks only if not already in DB
+    DEFAULT_TASKS.forEach(defaultTask => {
+      const exists = allTasks.some(
+        t => t.task === defaultTask.task && t.time === defaultTask.time
+      );
+      if (!exists) todayTasks.push({ ...defaultTask, completed: false, source: "default" });
+    });
+
+    // Render tasks
+    for (const task of todayTasks) {
+      const item = document.createElement("li");
+      item.className = "task-item" + (task.completed ? " task-completed" : "");
+
+      item.innerHTML = `
+        <div class="task-checkbox ${task.completed ? "completed" : ""}"></div>
+        <div class="task-text">${task.task}</div>
+        <div class="task-due">${task.time}</div>
+      `;
+
+      // Toggle complete/incomplete
+      item.querySelector(".task-checkbox").addEventListener("click", async () => {
+        const checkbox = item.querySelector(".task-checkbox");
+        checkbox.classList.toggle("completed");
+        item.classList.toggle("task-completed");
+
+        const isCompleted = checkbox.classList.contains("completed");
+
+        await fetch("http://localhost:3000/api/tasks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            task: task.task,
+            time: task.time,
+            date: todayStr,
+            completed: isCompleted,
+          }),
+        });
+      });
+
+      taskList.appendChild(item);
+    }
+  } catch (err) {
+    console.error("Failed to load tasks:", err);
+    taskList.innerHTML = "<li class='task-item'>Could not load tasks</li>";
+  }
+}
+
+async function addCustomTask() {
+  const taskInput = document.getElementById("custom-task-name");
+  const timeInput = document.getElementById("custom-task-time");
+  const task = taskInput.value.trim();
+  const time = timeInput.value || "Anytime";
+
+  if (!task) return alert("Please enter a task name.");
+
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const email = user?.email;
+  if (!email) return alert("User not logged in");
+
+  const today = new Date().toISOString().split("T")[0];
+
+  try {
+    const res = await fetch("http://localhost:3000/api/tasks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        task,
+        time,
+        date: today,
+        completed: false,
+      }),
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      alert("New task added!");
+      taskInput.value = "";
+      timeInput.value = "";
+      loadTodayTasks(); // Refresh task list
+    } else {
+      alert("Failed to add task: " + result.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Error adding task.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadTodayTasks);
+</script>
+</body>
+</html>

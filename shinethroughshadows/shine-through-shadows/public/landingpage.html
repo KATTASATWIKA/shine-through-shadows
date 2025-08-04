@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shine Through Shadows</title>
+    <meta name="description" content="Mental health assessment and support platform" />
+    <meta name="author" content="Shine Through Shadows" />
+    <link rel="stylesheet" href="landingpage.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="waves-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+      </div>
+      
+      <header>
+        <div class="logo">
+          <span class="logo-text">Shine <span class="accent">Through</span> Shadows</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="about.html" class="nav-link">Services</a></li>
+            <li><a href="about.html" class="nav-link">Contact</a></li>
+            <audio id="bgAudio" preload="auto" loop>
+  <source src="your-audio.mp3" type="audio/mpeg">
+</audio>
+
+<button id="audio-btn">🔊</button>
+
+<script>
+  const audio = document.getElementById('bgAudio');
+  const audioBtn = document.getElementById('audio-btn');
+
+  // Restore state
+  const savedTime = localStorage.getItem('audioTime');
+  const shouldPlay = localStorage.getItem('audioIsPlaying');
+
+  if (savedTime) audio.currentTime = parseFloat(savedTime);
+
+  if (shouldPlay === 'true') {
+    audio.play().catch(() => {}); // Browser allows this since user interacted before
+    audioBtn.textContent = '⏸️';
+  }
+
+  // Save time every second
+  setInterval(() => {
+    localStorage.setItem('audioTime', audio.currentTime);
+  }, 1000);
+
+  // Toggle audio on click
+  let isPlaying = (shouldPlay === 'true');
+  audioBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      audioBtn.textContent = '⏸️';
+      isPlaying = true;
+      localStorage.setItem('audioIsPlaying', true);
+    } else {
+      audio.pause();
+      audioBtn.textContent = '🔊';
+      isPlaying = false;
+      localStorage.setItem('audioIsPlaying', false);
+    }
+  });
+</script>
+
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="hero">
+          <div class="hero-content">
+            <h1 class="animate-float">Your Journey to <span class="gradient-text">Mental Wellness</span> Begins Here</h1>
+            <p>A comprehensive platform for mental health assessment, resources, and support.</p>
+            <button class="btn primary-btn" id="get-started-btn">Get Started</button>
+          </div>
+          <div class="hero-image animate-float">
+            <div class="circle-bg"></div>
+            <div class="floating-elements">
+              <div class="floating-element e1"></div>
+              <div class="floating-element e2"></div>
+              <div class="floating-element e3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-container" id="auth-container">
+          <div class="forms-container">
+            <div class="form-box login">
+              <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Continue your journey to mental wellness</p>
+              </div>
+              <form id="login-form">
+                <div class="input-group">
+                  <label for="login-email">Email</label>
+                  <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                  <label for="login-password">Password</label>
+                  <input type="password" id="login-password" required>
+                  <span class="toggle-password" data-for="login-password">👁️</span>
+                </div>
+                <div class="form-footer">
+                  <a href="#" class="forgot-password">Forgot Password?</a>
+                  <button type="submit" class="btn primary-btn">Login</button>
+                </div>
+                <p class="switch-form-text">
+                  Don't have an account? <a href="#" id="switch-to-register">Register</a>
+                </p>
+              </form>
+            </div>
+
+            <div class="form-box register hide">
+              <div class="form-header">
+                <h2>Create Account</h2>
+                <p>Join our community and start your healing journey</p>
+              </div>
+                            <div class="progress-container">
+                <div class="progress-bar-inner"></div>
+              </div>
+              <form id="register-form">
+                <!-- Step 1: Basic Information -->
+                <div class="registration-step">
+                  <div class="input-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                    <span class="toggle-password" data-for="register-password">👁️</span>
+                  </div>
+                  <div class="input-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <input type="password" id="register-confirm" required>
+                    <span class="toggle-password" data-for="register-confirm">👁️</span>
+                  </div>
+                  <div class="step-buttons">
+                    <button type="button" class="btn primary-btn next-step">Next</button>
+                  </div>
+                </div>
+                
+                <!-- Step 2: Personal & Medical Information -->
+                <div class="registration-step hide">
+                  <div class="input-group">
+                    <label for="register-age">Age</label>
+                    <input type="number" id="register-age" min="18" max="120" required>
+                  </div>
+                  <div class="input-group">
+                    <label for="register-gender">Gender</label>
+                    <select id="register-gender" required>
+                      <option value="">Select gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="non-binary">Non-binary</option>
+                      <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label for="medical-history">Medical History (Optional)</label>
+                    <textarea id="medical-history" rows="3" placeholder="List any relevant medical conditions"></textarea>
+                  </div>
+                  <div class="input-group">
+                    <label for="current-medications">Current Medications (Optional)</label>
+                    <textarea id="current-medications" rows="3" placeholder="List any medications you're currently taking"></textarea>
+                  </div>
+                  <div class="step-buttons">
+                    <button type="button" class="btn primary-btn prev-step">Back</button>
+                    <button type="button" class="btn primary-btn next-step">Next</button>
+                  </div>
+                </div>
+                
+                <!-- Step 3: Preferences -->
+                <div class="registration-step hide">
+                  <h3>Preferences</h3>
+                  <div class="input-group">
+                    <label>How often would you like to receive notifications?</label>
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input type="radio" id="notification-daily" name="notification-frequency" value="daily" checked>
+                        <label for="notification-daily">Daily</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="notification-weekly" name="notification-frequency" value="weekly">
+                        <label for="notification-weekly">Weekly</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="notification-monthly" name="notification-frequency" value="monthly">
+                        <label for="notification-monthly">Monthly</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="notification-never" name="notification-frequency" value="never">
+                        <label for="notification-never">Never</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label>Preferred therapy approach:</label>
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input type="radio" id="therapy-self" name="therapy-preference" value="self" checked>
+                        <label for="therapy-self">Self-guided</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="therapy-group" name="therapy-preference" value="group">
+                        <label for="therapy-group">Group therapy</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="therapy-one-on-one" name="therapy-preference" value="one-on-one">
+                        <label for="therapy-one-on-one">One-on-one therapy</label>
+                      </div>
+                      <div class="radio-option">
+                        <input type="radio" id="therapy-unsure" name="therapy-preference" value="unsure">
+                        <label for="therapy-unsure">Not sure yet</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="activity-reminders">
+                    <label for="activity-reminders">Send me daily activity reminders</label>
+                  </div>
+                  <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                  </div>
+                  <div class="step-buttons">
+                    <button type="button" class="btn primary-btn prev-step">Back</button>
+                    <button type="submit" class="btn primary-btn">Complete Registration</button>
+                  </div>
+                </div>
+                <p class="switch-form-text">
+                  Already have an account? <a href="#" id="switch-to-login">Login</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <p>&copy; 2025 Shine Through Shadows. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="about.html">Privacy Policy</a>
+            <a href="about.html">Terms of Service</a>
+            <a href="about.html">Contact Us</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="landingpage.js"></script>
+  </body>
+</html>

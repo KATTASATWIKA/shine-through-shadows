@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task History | Shine Through Shadows</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #d4f1f4;
+      margin: 0;
+      padding: 20px;
+      color: #05445e;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .task-day {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .task-day h2 {
+      color: #189ab4;
+      margin-bottom: 10px;
+    }
+
+    .task-day ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .task-day li {
+      background: #75e6da;
+      color: #05445e;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1rem;
+      color: white;
+      background: #189ab4;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .back-btn:hover {
+      background: #05445e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Completed Task History</h1>
+  <div id="task-history-container"></div>
+  <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+
+  <script>
+
+  async function loadTaskHistory() {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const email = user?.email;
+
+    if (!email) {
+      document.getElementById('task-history-container').innerHTML = "<p>User not found.</p>";
+      return;
+    }
+
+    try {
+      const res = await fetch(`http://localhost:3000/api/tasks/${email}`);
+      const data = await res.json();
+      console.log("Fetched data from server:", data);  // ✅ Debugging line
+
+      const groupedTasks = data.groupedTasks || {};
+      const container = document.getElementById("task-history-container");
+
+      if (Object.keys(groupedTasks).length === 0) {
+        container.innerHTML = "<p>No tasks completed yet.</p>";
+        return;
+      }
+
+      for (const [date, tasks] of Object.entries(groupedTasks)) {
+        const section = document.createElement("div");
+        section.classList.add("task-day");
+        section.innerHTML = `
+          <h2>${date}</h2>
+          <ul>
+            ${tasks.map(t => `<li>${t.task} (${t.time})</li>`).join("")}
+          </ul>
+        `;
+        container.appendChild(section);
+      }
+
+    } catch (error) {
+      console.error("Error loading task history:", error);
+      document.getElementById("task-history-container").innerHTML = "<p>Failed to load tasks.</p>";
+    }
+  }
+
+  loadTaskHistory();
+
+
+  </script>
+</body>
+</html>

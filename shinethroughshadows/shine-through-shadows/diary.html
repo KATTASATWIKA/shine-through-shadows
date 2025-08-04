@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diary Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f0f2f5;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    h2, h3 {
+      color: #333;
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style: none;
+      background-color: #fff;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .label {
+      font-weight: bold;
+    }
+    .reframed {
+      color: #2e7d32;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📔 Your Personal Diary</h2>
+
+  <label for="userEmail">Email:</label>
+  <input type="email" id="userEmail" placeholder="Enter your email" required>
+
+  <label for="diaryText">Diary Entry:</label>
+  <textarea id="diaryText" rows="8" placeholder="Write your thoughts here..."></textarea>
+
+  <button onclick="submitEntry()">Submit Entry</button>
+
+  <h3>✨ Reframed Positive Version:</h3>
+  <p id="reframedOutput" class="reframed"></p>
+
+  <h3>📚 Previous Diary Entries</h3>
+  <ul id="history"></ul>
+
+  <script>
+  const email = localStorage.getItem("email");
+
+  async function loadTasks() {
+    const res = await fetch(`/api/daily-task/${email}`);
+    const data = await res.json();
+    displayTasks(data.tasks);
+    showNotification(data.tasks);
+  }
+
+  function displayTasks(tasks) {
+    const container = document.getElementById('taskList');
+    container.innerHTML = '';
+    let completed = 0;
+
+    tasks.forEach(task => {
+      if (task.completed) completed++;
+
+      const div = document.createElement('div');
+      div.className = `task animate__animated animate__fadeInUp ${task.completed ? 'completed' : ''}`;
+      div.innerHTML = `
+        <strong>${task.task}</strong><br/>
+        ⏰ ${task.time}<br/>
+        <button onclick="toggleTask('${task._id}')">
+          ${task.completed ? '✅ Completed' : '✔️ Mark as Done'}
+        </button>
+      `;
+      container.appendChild(div);
+    });
+
+    const percentage = tasks.length ? (completed / tasks.length) * 100 : 0;
+    document.getElementById('progressBar').style.width = percentage + "%";
+  }
+
+  async function addTask() {
+    const task = document.getElementById('newTask').value;
+    const time = document.getElementById('taskTime').value;
+    if (!task || !time) return alert("Enter both task and time");
+
+    await fetch('/api/daily-task', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, task, time })
+    });
+
+    document.getElementById('newTask').value = '';
+    document.getElementById('taskTime').value = '';
+    loadTasks();
+  }
+
+  async function toggleTask(taskId) {
+    await fetch('/api/toggle-task', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, taskId })
+    });
+    loadTasks(); // Reload updated state
+  }
+
+  function showNotification(tasks) {
+    const incomplete = tasks.filter(t => !t.completed);
+    if (incomplete.length === 0) return;
+
+    const message = `📝 You have ${incomplete.length} pending tasks today:\n\n• ` + incomplete.map(t => t.task).join('\n• ');
+    alert(message);
+  }
+
+  // Initial Load
+  window.onload = loadTasks;
+</script>
+
+
+</body>
+</html>
