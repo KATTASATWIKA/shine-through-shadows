@@ -42,16 +42,16 @@ Mental health is a **silent crisis** in India. The numbers tell a sobering story
 
 | 📊 **Statistic** | 📈 **Impact** |
 |------------------|---------------|
-| 🏥 **197 million** people affected | **1 in 7** Indians suffer from mental disorders |
-| 😔 **56 million** with depression | Equivalent to the population of South Korea |
-| 😰 **38 million** with anxiety | More than Canada's entire population |
-| 👨‍⚕️ **0.75 psychiatrists** per 100,000 | **4x less** than WHO recommendations |
+|  **197 million** people affected | **1 in 7** Indians suffer from mental disorders |
+|  **56 million** with depression | Equivalent to the population of South Korea |
+|  **38 million** with anxiety | More than Canada's entire population |
+| 👨‍⚕ **0.75 psychiatrists** per 100,000 | **4x less** than WHO recommendations |
 
 **Shine Through Shadows** bridges this gap with:
-- 🤖 **AI-powered assessments** and therapy
-- 📱 **24/7 accessibility** and anonymity  
-- 🎯 **Personalized interventions** based on CBT principles
-- 🌱 **Holistic wellbeing** through mood tracking and mindfulness
+-  **AI-powered assessments** and therapy
+-  **24/7 accessibility** and anonymity  
+-  **Personalized interventions** based on CBT principles
+-  **Holistic wellbeing** through mood tracking and mindfulness
 
 <img width="800" alt="🌟 Main Dashboard Overview" src="https://github.com/user-attachments/assets/f56997db-ff24-4e08-b221-5ef4b2ce431f" />
 
@@ -92,19 +92,17 @@ After login, users access a comprehensive, intuitive dashboard designed for emot
 
 <div align="center">
 
-### 🌟 *Comprehensive Mental Health Toolkit* 🌟
 
 </div>
 
-### 🧠 **🎯 Depression Assessment & AI Report Generation**
+###  **🎯 Depression Assessment & AI Report Generation**
 
 <table>
 <tr>
 <td width="60%">
 
 **🔍 Evidence-Based Assessment:**
-- ✅ Clinically-validated questionnaire
-- 📊 **5-tier classification system:**
+-  **5-tier classification system:**
   - 🟢 **Minimal** - You're doing great!
   - 🟡 **Mild** - Small steps needed
   - 🟠 **Moderate** - Time for action
@@ -172,7 +170,7 @@ After login, users access a comprehensive, intuitive dashboard designed for emot
 **📝 Daily Mood Logging:**
 -  Emoji-based mood selection
 -  Personal notes & reflections  
-- 🏷 Custom labels & categories
+-  Custom labels & categories
 -  One entry per day rule
 
 </td>
@@ -232,10 +230,10 @@ After login, users access a comprehensive, intuitive dashboard designed for emot
 
 | 🎮 **Feature** | 📈 **Benefit** | 🏆 **Reward** |
 |----------------|----------------|---------------|
-| ✅ Task completion | Builds routine | **+10 XP** per task |
-| 🔥 Streak tracking | Maintains momentum | **Bonus multipliers** |
-| 📅 Date grouping | Visual progress | **Achievement badges** |
-| ⏰ Time management | Better planning | **Productivity insights** |
+|  Task completion | Builds routine | **+10 XP** per task |
+|  Streak tracking | Maintains momentum | **Bonus multipliers** |
+|  Date grouping | Visual progress | **Achievement badges** |
+|  Time management | Better planning | **Productivity insights** |
 
 </div>
 
@@ -247,16 +245,15 @@ After login, users access a comprehensive, intuitive dashboard designed for emot
 
 <div align="center">
 
-#### 🌊 *Find Peace Through Play* 🌊
 
 </div>
 
 | 🎮 **Game** | 🎯 **Purpose** | 🧘‍♀️ **Benefit** |
 |-------------|----------------|-------------------|
-| 🌊 **Ripple Garden** | Tap to create calming water ripples | Mindfulness & focus |
-| 🎨 **Flow Art** | Draw therapeutic flowing patterns | Creative expression |
-| 🌊 **Ocean of Wisdom** | Floating inspirational quotes | Motivation & peace |
-| 🫁 **Breathing Circle** | Guided breathing visualization | Anxiety reduction |
+|  **Ripple Garden** | Tap to create calming water ripples | Mindfulness & focus |
+|  **Flow Art** | Draw therapeutic flowing patterns | Creative expression |
+|  **Ocean of Wisdom** | Floating inspirational quotes | Motivation & peace |
+|  **Breathing Circle** | Guided breathing visualization | Anxiety reduction |
 
 ---
 
@@ -427,34 +424,8 @@ node server.js
 
 <div align="center">
 
-🎉 **Congratulations! Your mental health companion is ready!** 🎉
 
 </div>
-
----
-
-## 📬 **API DOCUMENTATION**
-
-<div align="center">
-
-### 🔌 *RESTful API Endpoints* 🔌
-
-</div>
-
-| 🔗 **METHOD** | 📍 **ENDPOINT** | 📋 **DESCRIPTION** | 🎯 **PURPOSE** |
-|---------------|-----------------|-------------------|----------------|
-| 📝 **POST** | `/api/register` | Register new user | 👤 User onboarding |
-| 🔐 **POST** | `/api/login` | Authenticate user | 🔑 Secure access |
-| 📊 **POST** | `/api/submit-quiz` | Submit depression assessment | 🧠 Mental health evaluation |
-| 💬 **POST** | `/api/chat` | Get CBT chatbot response | 🤖 AI therapy session |
-| 📖 **POST** | `/api/diary` | Reframe diary entry | ✨ Sentiment transformation |
-| 📚 **GET** | `/api/diary/:email` | Fetch user diary entries | 📖 Personal history |
-| 😊 **POST** | `/api/mood` | Log daily mood | 📊 Mood tracking |
-| 📈 **GET** | `/api/mood-history/:email` | Get mood analytics | 📊 Historical insights |
-| ✅ **POST** | `/api/tasks` | Add/update tasks | 🎯 Goal management |
-| 📋 **GET** | `/api/tasks/:email` | Get task analytics | 📊 Progress tracking |
-| 💾 **POST** | `/api/cbt-report` | Save CBT session | 🧠 Therapy records |
-| 📑 **GET** | `/api/cbt-reports/:email` | Get CBT history | 📚 Session analytics |
 
 ---
 
@@ -462,7 +433,6 @@ node server.js
 
 <div align="center">
 
-### 🗺️ *Your Journey to Better Mental Health* 🗺️
 
 </div>
 
@@ -483,44 +453,12 @@ graph TD
 
 <div align="center">
 
-**🌈 Every step forward is a victory worth celebrating! 🌈**
 
 </div>
 
 ---
 
-## 🙌 **CREDITS & ACKNOWLEDGMENTS**
 
-<div align="center">
-
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🛠️ **Technologies & Libraries**
-- 🚀 [Express.js](https://expressjs.com) - Fast web framework
-- 🗄️ [MongoDB](https://mongodb.com) + [Mongoose](https://mongoosejs.com) - Database excellence  
-- 🤖 [Google Gemini AI](https://ai.google.dev) - Intelligent conversations
-- 🎨 Modern HTML/CSS/JavaScript - Beautiful interfaces
-
-</td>
-<td width="50%">
-
-#### 🌟 **Special Thanks**
-- 💚 **Mental health advocates** worldwide
-- 🏥 **WHO & NIMHANS** for critical statistics  
-- 👥 **Open source community** for inspiration
-- 🧠 **CBT therapy principles** for guidance
-- ❤️ **Everyone fighting mental health stigma**
-
-</td>
-</tr>
-</table>
-
-<div align="center">
 
 </div>
 
